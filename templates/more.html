@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Описание товара</title>
+</head>
+<body>
+    <!-- Здесь будут размещены элементы страницы -->
+    <div class="product-card">
+        <img src="{{ info.image }}" alt="{{info.name}}">
+        <p> {{ info.description }} </p>
+        <p>Количество на складе: {{ info.count }}</p>
+        <a href="/buy">Купить</a>
+    </div>
+</body>
+</html>

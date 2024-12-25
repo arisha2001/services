@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница товаров</title>
+    <style>
+        /* Стили для элементов страницы */
+        body {
+            font-family: Arial, sans-serif; /* Шрифт по умолчанию */
+        }
+
+        .product-card {
+            background-color: #f5f5f5; /* Цвет фона карточки товара */
+            border: 1px solid #ddd; /* Граница карточки товара */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень под карточкой товара */
+            display: flex; /* Выравнивание содержимого карточки товара по горизонтали */
+            flex-direction: column; /* Направление выравнивания содержимого по вертикали */
+            justify-content: center; /* Центрирование содержимого внутри карточки товара */
+            align-items: center; /* Вертикальное выравнивание содержимого внутри карточки товара */
+            width: 300px; /* Ширина карточки товара */
+            height: auto; /* Высота карточки товара будет автоматически подстраиваться под содержимое */
+            text-align: center; /* Горизонтальное выравнивание текста внутри карточки товара */
+        }
+
+        .product-card img {
+            max-width: 100%; /* Максимальная ширина изображения внутри карточки товара */
+            max-height: 200px; /* Максимальная высота изображения внутри карточки товара */
+            margin: 0 auto; /* Отступы сверху и снизу равны нулю, слева и справа — автоматически выравниваются */
+        }
+    </style>
+</head>
+<body>
+    <!-- Здесь будут размещены элементы страницы -->
+    {% for product in products %}
+        <div class="product-card">
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+            <a href="{{ product.description_url }}">{{ product.name }}</a>
+        </div>
+    {% endfor %}
+</body>
+</html>
